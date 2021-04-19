@@ -1,5 +1,7 @@
 package com.example.androidwithkotlin.repository
 
+import android.telecom.Call
+import androidx.room.Query
 import com.example.androidwithkotlin.model.WeatherDTO
 import retrofit2.Call
 import retrofit2.http.GET
