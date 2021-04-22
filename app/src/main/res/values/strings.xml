@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">Android With Kotlin</string>
+    <string name="app_name">Android On Kotlin</string>
     <string name="temperature_label">Температура</string>
     <string name="feels_like_label">Ощущается как</string>
     <string name="city_coordinates">lt/ln: %s, %s"</string>
     <string name="error">Error</string>
     <string name="reload">Reload</string>
+    <string name="moscow">Москва</string>
+    <string name="Khabarovsk">Хабаровск</string>
+    <string name="server_connection_error">Не удалось установить соединение с сервером</string>
+    <string name="menu_title_history">History</string>
+    <string name="menu_contacts">Contacts</string>
 </resources>
