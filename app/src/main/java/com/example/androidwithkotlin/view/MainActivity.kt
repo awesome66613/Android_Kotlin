@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commitAllowingStateLoss()
+                .replace(R.id.container, MainFragment.newInstance())
+                .commitAllowingStateLoss()
         }
         registerReceiver(receiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
     }
@@ -35,21 +35,31 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_history -> {
                 supportFragmentManager.apply {
                     beginTransaction()
-                            .add(R.id.container, HistoryFragment.newInstance())
-                            .addToBackStack("")
-                            .commitAllowingStateLoss()
+                        .add(R.id.container, HistoryFragment.newInstance())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
                 }
                 true
             }
             R.id.menu_content_provider -> {
                 supportFragmentManager.apply{
                     beginTransaction()
-                            .add(R.id.container, ContentProviderFragment.newInstance())
-                            .addToBackStack("")
-                            .commitAllowingStateLoss()
+                        .add(R.id.container, ContentProviderFragment.newInstance())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
                 }
                 true
             }
+            R.id.menu_google_maps -> {
+                supportFragmentManager.apply {
+                    beginTransaction()
+                        .add(R.id.container, GoogleMapsFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                true
+            }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }

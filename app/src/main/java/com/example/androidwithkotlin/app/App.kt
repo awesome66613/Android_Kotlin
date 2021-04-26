@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.room.Room
 import com.example.androidonkotlin.room.HistoryDao
 import com.example.androidonkotlin.room.HistoryDatabase
+import com.example.androidwithkotlin.room.HistoryDao
+import com.example.androidwithkotlin.room.HistoryDatabase
 
 class App : Application() {
 
@@ -20,14 +22,14 @@ class App : Application() {
 
         private val appHistoryDao by lazy {
             Room
-                    .databaseBuilder(
-                            appInstance!!.applicationContext,
-                            HistoryDatabase::class.java,
-                            DB_NAME
-                    )
-                    .allowMainThreadQueries()
-                    .build()
-                    .historyDao()
+                .databaseBuilder(
+                    appInstance!!.applicationContext,
+                    HistoryDatabase::class.java,
+                    DB_NAME
+                )
+                .allowMainThreadQueries()
+                .build()
+                .historyDao()
         }
 
         fun getHistoryDao(): HistoryDao = appHistoryDao
